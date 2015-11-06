@@ -1,0 +1,25 @@
+{
+  "name": "git-egylet",
+  "version": "1.0.0",
+  "description": "Use git more easier",
+  "main": "git-egylet.sh",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kzhunbp/git-egylet.git"
+  },
+  "keywords": [
+    "git"
+  ],
+  "author": "kzhunbp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kzhunbp/git-egylet/issues"
+  },
+  "homepage": "https://github.com/kzhunbp/git-egylet#readme",
+  "dependencies": {
+    "git-issues": "^1.0.0"
+  }
+}
