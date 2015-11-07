@@ -9,18 +9,18 @@
 #https://www.atlassian.com/git/tutorials/undoing-changes/git-revert
 #https://confluence.atlassian.com/bitbucket/resolve-issues-automatically-when-users-push-code-221451126.html
 
-
 while true
 do
     echo "Which command do you like? \n
             GENERAL                       BRANCHES              ISSUES            
-            [s] - status                  [lb] - list           [li] - issues
-            [l] - log                     [sb] - select
-            [d] - diff                    [nb] - new   
-            [c] - commit                  [mb] - merge
-            [u] - undo (last commit)      [db]- del
-            [p] - push\n
-            [q] - quit"
+            [s]  - status                  [lb] - list           [li] - issues
+            [l]  - log                     [sb] - select
+            [d]  - diff                    [nb] - new   
+            [c]  - commit                  [mb] - merge
+            [u]  - undo (last commit)      [db] - del
+            [ps] - push
+            [pl] - pull\n 
+            [q]  - quit"
          
       read gitcommand
     
@@ -72,12 +72,17 @@ do
             #undo previous unpushed commit
             git reset --soft HEAD~ 
      elif [ $gitcommand = "push" ] || [ $gitcommand = "merge" ] || [ $gitcommand = "select" ] || [ $gitcommand = "new" ] || [ $gitcommand = "del" ] ||
-          [ $gitcommand = "p" ] || [ $gitcommand = "mb" ] || [ $gitcommand = "sb" ] || [ $gitcommand = "nb" ] || [ $gitcommand = "db" ]; then
+          [ $gitcommand = "ps" ] || [ $gitcommand = "mb" ] || [ $gitcommand = "sb" ] || [ $gitcommand = "nb" ] || [ $gitcommand = "db" ]; then
             #read target branch
-         if [ $gitcommand = "push" ] || [ $gitcommand = "p" ]; then
+         if [ $gitcommand = "push" ] || [ $gitcommand = "ps" ]; then
               echo "Type the name of the target git branch [ENTER]:"
               read targetbranch
               git push -f origin $targetbranch
+         elif [ $gitcommand = "pull" ] || [ $gitcommand = "pl" ]; then
+              echo "Type the name of the target git branch [ENTER]:"
+              read targetbranch               
+              git checkout $targetbranch
+              git pull --rebase origin
          elif [ $gitcommand = "merge" ] || [ $gitcommand = "mb" ]; then
              echo "Type the name of the source git branch. \n Please be sure the destination branch is selected. Press [ENTER] to continue..."
              read targetbranch
