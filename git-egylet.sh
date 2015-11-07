@@ -22,7 +22,7 @@ do
             [pl] - pull\n 
             [q]  - quit"
          
-      read gitcommand
+     read gitcommand
     
      if [ $gitcommand = "quit" ] || [ $gitcommand = "q" ]; then
         exit  
@@ -71,8 +71,8 @@ do
       elif [ $gitcommand = "undo" ] || [ $gitcommand = "4" ]; then
             #undo previous unpushed commit
             git reset --soft HEAD~ 
-     elif [ $gitcommand = "push" ] || [ $gitcommand = "merge" ] || [ $gitcommand = "select" ] || [ $gitcommand = "new" ] || [ $gitcommand = "del" ] ||
-          [ $gitcommand = "ps" ] || [ $gitcommand = "mb" ] || [ $gitcommand = "sb" ] || [ $gitcommand = "nb" ] || [ $gitcommand = "db" ]; then
+     elif [ $gitcommand = "push" ] || [ $gitcommand = "push" ] || [ $gitcommand = "merge" ] || [ $gitcommand = "select" ] || [ $gitcommand = "new" ] || [ $gitcommand = "del" ] ||
+          [ $gitcommand = "ps" ] || [ $gitcommand = "pl" ] || [ $gitcommand = "mb" ] || [ $gitcommand = "sb" ] || [ $gitcommand = "nb" ] || [ $gitcommand = "db" ]; then
             #read target branch
          if [ $gitcommand = "push" ] || [ $gitcommand = "ps" ]; then
               echo "Type the name of the target git branch [ENTER]:"
