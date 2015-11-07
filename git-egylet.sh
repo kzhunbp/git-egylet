@@ -10,6 +10,7 @@
 #https://confluence.atlassian.com/bitbucket/resolve-issues-automatically-when-users-push-code-221451126.html
 
 while true
+
 do
     echo "Which command do you like? \n
             GENERAL                       BRANCHES              ISSUES            
