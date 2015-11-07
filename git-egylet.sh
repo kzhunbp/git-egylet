@@ -9,6 +9,7 @@
 #https://www.atlassian.com/git/tutorials/undoing-changes/git-revert
 #https://confluence.atlassian.com/bitbucket/resolve-issues-automatically-when-users-push-code-221451126.html
 
+
 while true
 do
     echo "Which command do you like? \n
